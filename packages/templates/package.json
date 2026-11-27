@@ -1,0 +1,26 @@
+{
+  "name": "@latex-kit/templates",
+  "version": "0.0.1",
+  "description": "Starting-point document templates for latex-kit: a letter, an invoice, a services agreement and an NDA. Not legal advice.",
+  "author": "Constructive <developers@constructive.io>",
+  "license": "MIT",
+  "files": [
+    "templates",
+    "snippets",
+    "clauses",
+    "components",
+    "bundles",
+    "DISCLAIMER.md"
+  ],
+  "peerDependencies": {
+    "latex-kit": ">=0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/constructive-io/latex-kit-templates",
+    "directory": "packages/templates"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

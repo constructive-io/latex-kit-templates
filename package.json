@@ -1,0 +1,26 @@
+{
+  "name": "latex-kit-templates",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Constructive <developers@constructive.io>",
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/bundles.mjs check && latex-kit check --root project",
+    "draft": "latex-kit build --root project",
+    "final": "latex-kit build --final --root project",
+    "blank": "latex-kit build --variant blank --root project",
+    "names": "latex-kit build --variant blank --blanks names --root project",
+    "review": "latex-kit build --highlight --missing blank --root project",
+    "typegen": "latex-kit typegen --root project",
+    "bundle": "node scripts/bundles.mjs",
+    "guide": "latex-kit-sign guide --all project/out",
+    "doctor": "latex-kit doctor --root project"
+  },
+  "devDependencies": {
+    "@latex-kit/sign": "^0.6.0",
+    "latex-kit": "^0.6.0"
+  }
+}

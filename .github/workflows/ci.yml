@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  documents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # commit dates set each PDF's build date
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pnpm install
+      - name: The package ships the same disclaimer as the repository
+        run: sed 's#\[LICENSE\](LICENSE)#MIT license#' DISCLAIMER.md | diff - packages/templates/DISCLAIMER.md
+      - name: Templates, schemas, records and bundles agree
+        run: pnpm check
+      - name: Generated schemas are up to date
+        run: pnpm typegen && git diff --exit-code -- packages
+      - name: Every template builds as an empty form
+        run: pnpm blank
+      - name: Every document builds
+        run: pnpm draft

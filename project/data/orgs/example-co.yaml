@@ -1,0 +1,9 @@
+# Made up. Put your own organization here.
+name: Example Co, Inc.
+entityType: Delaware corporation
+address:
+  line1: 1 Example Way
+  city: Springfield
+  region: ST
+  postalCode: "00000"
+signer: { $ref: people/sam-sample }

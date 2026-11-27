@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage[margin=25mm]{geometry}
+\usepackage{latex-kit}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\snippet{letterhead}
+
+\vspace{2em}
+\field{date|date:long}
+
+\vspace{1em}
+\field{to.name}\\
+\when{to.address}{\field{to.address.line1}\\
+\field{to.address.city}}
+
+\vspace{1em}
+Dear \field{to.name},
+
+\field{body|paragraphs}
+
+\vspace{2em}
+Sincerely,\\[3em]
+\field{from.signer.name}\\
+\field{from.signer.title|default:""}
+
+\vfill
+{\small \docid}
+\end{document}

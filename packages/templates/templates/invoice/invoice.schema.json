@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "invoice document",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "template": {
+      "const": "invoice"
+    },
+    "docId": {
+      "type": "string",
+      "description": "Minted on the first final build; never reuse one."
+    },
+    "locale": {
+      "type": "string",
+      "description": "BCP 47 language tag, e.g. en-US or ja-JP."
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "entityType": {
+              "type": "string"
+            },
+            "jurisdiction": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "line1": {
+                  "type": "string"
+                },
+                "line2": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "line1",
+                "city"
+              ]
+            },
+            "signer": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "signature": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
+        "to": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "entityType": {
+              "type": "string"
+            },
+            "jurisdiction": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "line1": {
+                  "type": "string"
+                },
+                "line2": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "line1",
+                "city"
+              ]
+            },
+            "signer": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "signature": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
+        "issued": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "due": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "items": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "quantity": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "unitPrice": {
+                "type": "number",
+                "minimum": 0
+              },
+              "amount": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "description",
+              "quantity",
+              "unitPrice",
+              "amount"
+            ]
+          }
+        },
+        "subtotal": {
+          "type": "number"
+        },
+        "taxRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "tax": {
+          "type": "number"
+        },
+        "total": {
+          "type": "number"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to",
+        "issued",
+        "due",
+        "items",
+        "subtotal",
+        "taxRate",
+        "tax",
+        "total"
+      ]
+    }
+  },
+  "required": [
+    "template",
+    "data"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,48 @@
+% A short services agreement.
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fancyhdr,lastpage}
+\usepackage{latex-kit}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\small \docid}
+\fancyfoot[R]{\small Page \thepage\ of \pageref{LastPage}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+
+\begin{document}
+\begin{center}
+% blank=label: an empty form prints [Provider] here, not a line to write on
+{\large \formfield[blank=label,label={Provider}]{\field{provider.name}}}\\[0.3em]
+{\Large\bfseries Services Agreement}
+\end{center}
+
+This Agreement is made as of \field{effectiveDate|date:long} between
+\textbf{\field{provider.name}}\when{provider.address}{, of
+\field{provider.address.line1}, \field{provider.address.city}} (the
+``Provider''), and \textbf{\field{client.name}}\when{client.address}{, of
+\field{client.address.line1}, \field{client.address.city}} (the ``Client'').
+
+\section{Services}
+The Provider will carry out the following for the Client:
+\field{services|paragraphs}
+
+\section{Fee}
+The Client will pay the Provider \field{fee|money} within
+\field{paymentDays} days of each invoice.
+
+\section{Term}
+This Agreement runs for \field{termMonths} months from the date above.
+\when{noticeDays}{Either party may end it earlier with \field{noticeDays}
+days' written notice.}
+
+\section{Governing law}
+This Agreement is governed by the laws of \field{governingLaw}.
+
+\vspace{3em}
+% \signature prints a block for each party, and marks where each one signs
+% and dates: the build writes those spots to <document>.form.json
+\noindent\signature{provider}\hfill\signature{client}
+\end{document}

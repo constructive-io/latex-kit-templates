@@ -1,0 +1,15 @@
+# One record is one document. `pnpm final` mints its docId and writes it here.
+template: agreement
+docId: AGR-20261127-XT2Z0YSX
+data:
+  effectiveDate: "2026-01-15"
+  provider: { $ref: orgs/example-co }
+  client: { $ref: orgs/sample-client }
+  services: |
+    Design and build a sample widget, and hand over its drawings.
+
+    Two rounds of changes are included.
+  fee: { amount: 12000, currency: USD }
+  termMonths: 6
+  noticeDays: 30
+  governingLaw: the State of Example

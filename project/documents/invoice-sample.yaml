@@ -1,0 +1,26 @@
+# Made up. Totals are written out here; a TypeScript record could compute them.
+template: invoice
+docId: INV-20261127-6HCH3RNQ
+data:
+  from: { $ref: orgs/example-co }
+  to: { $ref: orgs/sample-client }
+  issued: "2026-01-15"
+  due: "2026-02-14"
+  items:
+    - {
+        description: "Widgets, standard (box of 100)",
+        quantity: 12,
+        unitPrice: 450,
+        amount: 5400
+      }
+    - {
+        description: "Calibration & setup",
+        quantity: 1,
+        unitPrice: 300,
+        amount: 300
+      }
+  subtotal: 5700
+  taxRate: 0.08
+  tax: 456
+  total: 6156
+  notes: Thank you for your business.

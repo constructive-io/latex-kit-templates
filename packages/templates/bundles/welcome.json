@@ -1,0 +1,15 @@
+{
+  "title": "Welcome pack",
+  "description": "The agreement and a cover letter, from one record",
+  "record": "engagements",
+  "documents": [
+    {
+      "template": "agreement",
+      "suffix": "agreement"
+    },
+    {
+      "template": "letter",
+      "suffix": "letter"
+    }
+  ]
+}

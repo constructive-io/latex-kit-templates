@@ -1,0 +1,36 @@
+% Invoice. Totals are computed in the record (TypeScript), not here.
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage[margin=22mm]{geometry}
+\usepackage{tabularx,booktabs}
+\usepackage{latex-kit}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\snippet{letterhead}
+
+\vspace{2em}
+{\Huge\bfseries Invoice} \hfill {\large \docid}
+
+\vspace{1em}
+\begin{tabular}{@{}ll@{}}
+Issued: & \field{issued|date:long} \\
+Due:    & \field{due|date:long} \\
+\end{tabular}
+
+\vspace{1.5em}
+\textbf{Bill to}\\
+\field{to.name}\\
+\field{to.address.line1}\\
+\field{to.address.city}, \field{to.address.region|default:""} \field{to.address.postalCode|default:""}
+
+\vspace{1.5em}
+% components/line-items.ts builds the table, totals included
+\component{line-items}{}
+
+\when{notes}{\vspace{2em}\textit{\field{notes|paragraphs}}}
+
+\vfill
+{\small Please pay \field{total|money:USD} (\field{total|words} dollars) by \field{due|date:long}. Quote \docid{} with your payment.}
+\end{document}

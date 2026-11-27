@@ -1,0 +1,9 @@
+# Made up.
+name: Sample Client LLC
+entityType: limited liability company
+address:
+  line1: 200 Demo Street
+  city: Anytown
+  region: ST
+  postalCode: "00000"
+signer: { $ref: people/pat-placeholder }

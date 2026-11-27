@@ -1,0 +1,9 @@
+{
+  "name": "latex-kit-templates-project",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A latex-kit project that builds every template in this workspace from made-up records",
+  "dependencies": {
+    "@latex-kit/templates": "workspace:*"
+  }
+}

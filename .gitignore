@@ -1,0 +1,5 @@
+node_modules/
+out/
+.DS_Store
+# envelopes from latex-kit-sign hold signers' details
+.latex-kit-sign/

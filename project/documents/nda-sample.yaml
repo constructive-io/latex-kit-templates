@@ -1,0 +1,15 @@
+# Made up. A one-way NDA between two companies that do not exist.
+template: nda
+docId: NDA-20261127-FCF7YTFN
+data:
+  effectiveDate: "2026-01-15"
+  discloser: { $ref: orgs/example-co }
+  recipient: { $ref: orgs/sample-client }
+  mutual: false
+  termMonths: 24
+  purpose: evaluating a possible supply partnership
+  governingLaw: the State of Delaware
+  exclusions:
+    - already known to the Recipient before disclosure
+    - independently developed without use of the Confidential Information
+    - received from a third party without a duty of confidentiality

@@ -1,0 +1,8 @@
+template: letter
+docId: LTR-20261127-5T50223V
+data:
+  date: "2026-01-15"
+  from: { $ref: orgs/example-co }
+  to: { $ref: people/pat-placeholder }
+  body: |
+    This letter is a sample. Change the record, or copy it, and build again.
