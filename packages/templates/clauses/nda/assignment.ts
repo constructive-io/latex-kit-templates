@@ -1,5 +1,3 @@
-// A clause written in TypeScript. `body` is template text, checked like the
-// .tex clauses; use `render: (data, ctx) => tex`…`` to build it in code.
 import { defineClause } from 'latex-kit';
 
 export default defineClause({

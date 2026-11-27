@@ -1,4 +1,3 @@
-# One record is one document. `pnpm final` mints its docId and writes it here.
 template: agreement
 docId: AGR-20261127-XT2Z0YSX
 data:

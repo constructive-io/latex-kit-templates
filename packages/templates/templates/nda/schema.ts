@@ -10,8 +10,6 @@ export default z.object({
   termMonths: z.number().int().positive(),
   purpose: z.string(),
   governingLaw: z.string(),
-  /** Extra carve-outs, printed as a list when present. */
   exclusions: z.array(z.string()).default([]),
-  /** Attached after the signatures, one page each: Exhibit A, B, … */
   exhibits: z.array(z.object({ title: z.string(), body: z.string() })).default([]),
 });

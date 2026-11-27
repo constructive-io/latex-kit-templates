@@ -6,7 +6,6 @@ export const LineItem = z.object({
   description: z.string(),
   quantity: z.number().positive(),
   unitPrice: z.number().nonnegative(),
-  /** quantity × unitPrice, computed in the record */
   amount: z.number().nonnegative(),
 });
 

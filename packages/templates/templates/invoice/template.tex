@@ -1,4 +1,3 @@
-% Invoice. Totals are computed in the record (TypeScript), not here.
 \documentclass[11pt]{article}
 \usepackage{fontspec}
 \usepackage[margin=22mm]{geometry}
@@ -26,7 +25,6 @@ Due:    & \field{due|date:long} \\
 \field{to.address.city}, \field{to.address.region|default:""} \field{to.address.postalCode|default:""}
 
 \vspace{1.5em}
-% components/line-items.ts builds the table, totals included
 \component{line-items}{}
 
 \when{notes}{\vspace{2em}\textit{\field{notes|paragraphs}}}

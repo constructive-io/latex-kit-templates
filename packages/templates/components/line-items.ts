@@ -1,5 +1,3 @@
-// The invoice table: one row per item, then subtotal, tax and total. A
-// component, because a table with computed rows reads better as code.
 import { defineComponent, money, percent, table, tex } from 'latex-kit';
 
 import type { InvoiceData } from '../templates/invoice/types';
