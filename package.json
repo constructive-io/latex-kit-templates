@@ -20,7 +20,7 @@
     "doctor": "latex-kit doctor --root project"
   },
   "devDependencies": {
-    "@latex-kit/sign": "^0.6.0",
-    "latex-kit": "^0.6.0"
+    "@latex-kit/sign": "^0.6.3",
+    "latex-kit": "^0.7.0"
   }
 }

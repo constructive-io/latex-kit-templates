@@ -9,17 +9,17 @@ importers:
   .:
     devDependencies:
       '@latex-kit/sign':
-        specifier: ^0.6.0
-        version: 0.6.1
+        specifier: ^0.6.3
+        version: 0.6.3
       latex-kit:
-        specifier: ^0.6.0
-        version: 0.6.1
+        specifier: ^0.7.0
+        version: 0.7.0
 
   packages/templates:
     dependencies:
       latex-kit:
-        specifier: '>=0.6.0'
-        version: 0.6.1
+        specifier: '>=0.7.0'
+        version: 0.7.0
 
   project:
     dependencies:
@@ -63,27 +63,27 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@latex-kit/components@0.3.1':
-    resolution: {integrity: sha512-WHwtg7LGFK2TQ83go8e1hjXZiKUfD92p6uuYld93BjUfpG4aXfYZuiB9+V1gAebCNGazOZ4iJwGB2Ivux8RhHQ==}
+  '@latex-kit/components@0.3.3':
+    resolution: {integrity: sha512-51VHfA87J6YyoKuD50qnHSdKQM/P5r6C1dg7PJw2MxV/WTzV/1TwGB8KV1SPZVmT73AdFX9OiDksp8pHwVmR7g==}
 
-  '@latex-kit/escape@0.3.2':
-    resolution: {integrity: sha512-hz4LBSteA/DT88pji2379ftHc//ocQQeKr7aFRoOLwkGpwhSH9++NL/+YxlJitNXgeSkBMF9lowrNZdofyUtKg==}
+  '@latex-kit/escape@0.3.3':
+    resolution: {integrity: sha512-YosNnNLuV8W4T40AbdhklGM7HDaDdq0C1V2XqJwqph4QI9whmyQaiNyJKNODhKinrGTz60zmT2tVP++fy8zRjQ==}
 
-  '@latex-kit/render@0.5.2':
-    resolution: {integrity: sha512-1ptRICRrzx9eWHvkGHsUEBUazD1fD5yn83oyqlJ8C+GRsYZv/WY2szTVsQiWk/EZAjSq53DxHAekncn7peZZrw==}
+  '@latex-kit/render@0.5.3':
+    resolution: {integrity: sha512-K56nS0slzmfNKuCfWQuRlOfmJu5CV6Qfse5Er/F3kg+M4r3emJ/ECbR+2ePjDU73l/sCX8J1RkU1UTuylGjyGA==}
 
-  '@latex-kit/schema@0.4.2':
-    resolution: {integrity: sha512-Al6y2pFD7bN1m/hOIET7t8x53iB0txYQImADgCJCHAofv9mq1vAD+MQOQnG/ZfyZg2EikDG053ImL1AMnGxDrQ==}
+  '@latex-kit/schema@0.4.3':
+    resolution: {integrity: sha512-+tu3LaNxn0i8fXqNCXCXT3DTp9eiU3sfv0Vu18C4nDWf7AGr1+SwviN1UaBfUD7n/C4QIAHzCoULuLutQ1rFCw==}
 
-  '@latex-kit/sign-web@0.6.1':
-    resolution: {integrity: sha512-KJALYG6msIaJg8om4RVxuj+hAPG/xlJU2h/sCN8g9wGLvcH9gTo3sZwRdWr7r0zhj+m7+6LIHB3CpLMriGeBMQ==}
+  '@latex-kit/sign-web@0.6.3':
+    resolution: {integrity: sha512-0eUYB3Iyf/pjkcomDm0Pyf+4YOY3vNKvO0iFc+CkZme91GpBvcvUY2I5qRlUKz/OhhDjGbIK0fQQSYUtrAaS0g==}
 
-  '@latex-kit/sign@0.6.1':
-    resolution: {integrity: sha512-k6VT/rMkyRlTyKeAMQ8eQBlxj+HTVU8K+Y8MyJ3Zojq8DHNWl937fSgOuqpCNgZOi6vQoHi+DqXIBDFEUN9Hcg==}
+  '@latex-kit/sign@0.6.3':
+    resolution: {integrity: sha512-7clbpgepvRs9nWb3NK5IKZwV4MdRafNeK3ya7SOrYWtQL1yvoG7a3YFSmq1fz0SjJtTppSmMZBkz7QjTZTBK/A==}
     hasBin: true
 
-  '@latex-kit/template@0.5.1':
-    resolution: {integrity: sha512-UZyHluPAd7g7oW2JrrNJPACZmNPrURsdLdcCqqo3clfzhEnXfF+UaRvCYzK+3c0GF4PwTtyHtUThVQZAznTe+Q==}
+  '@latex-kit/template@0.6.0':
+    resolution: {integrity: sha512-Ah37qmQyBDTESsKcN8xXcn9DCw0Q8xPtVsayYmF2bTM0SmZeGmcD5cwg6PaINjcUp/dm7po3PdQux3W0qUM63Q==}
 
   '@pdf-lib/standard-fonts@1.0.0':
     resolution: {integrity: sha512-hU30BK9IUN/su0Mn9VdlVKsWBS6GyhVfqjwl1FjZN4TxP6cCw0jP2w7V3Hf5uX7M0AZJ16vey9yE0ny7Sa59ZA==}
@@ -148,6 +148,9 @@ packages:
   '@unified-latex/unified-latex-util-visit@1.8.4':
     resolution: {integrity: sha512-m5O9evxr/kiX1awZAcwUQL+8slVvlWlkbZoKFDP1agrp3dpk7+69npqyoapKKJEK0B4uRYmv93Ho31oHgNoJrg==}
 
+  appstash@0.8.2:
+    resolution: {integrity: sha512-Lnq3NcsDE4fQA533gLSP+qZyv9ZzAu1nsIUzcG59yEM+pKH+gA5rCeWCtL/owp7IphryDb0cR4EsSsKFa5JxSw==}
+
   bail@2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
 
@@ -183,6 +186,9 @@ packages:
   find-and-require-package-json@0.9.3:
     resolution: {integrity: sha512-KPYJL0iWu6ERDRDVZERWMt02WdCZzgSAS9+3hvIhl8ckWRn9AznVWigUjP56nOHTxd426C+9ALv9cHIISY6RlQ==}
 
+  genomic@5.6.10:
+    resolution: {integrity: sha512-t/yfnHrVxfI69gQGbWzDyoaJ0gwgk/knudy/H9ifkhbFGKgUPHXkQy455IgjbICo+2n1/Li0mRWikbuRX0tV/w==}
+
   inquirerer@4.9.8:
     resolution: {integrity: sha512-cmQ1phUtT1E34fCcyias96i/9IFv+yLIVUUjTRZH7WKAk4WktrNE/p5nSw5TWvAn/RaGozLcoZGX+Y6012vKdQ==}
 
@@ -209,8 +215,8 @@ packages:
   komoji@0.9.3:
     resolution: {integrity: sha512-+X5iBR2Ou92rE+myGboZdeSr6HzN7d661FD7W2jXmhBiebqTdvHFi/VdHsIOVmj7Hk9hFlUIDbjaUSiYvWuIvw==}
 
-  latex-kit@0.6.1:
-    resolution: {integrity: sha512-QXut6Para7ixh15Tt2KTbtcZKJE0dzZ991YtKVN75pUJPAby6hG6TpOzQhroWeUa6Lvt8RyA/7kPs3/ZbDCY2w==}
+  latex-kit@0.7.0:
+    resolution: {integrity: sha512-wcWEeyd0+blwiJWo3F0qS4ivU7GNhZpia1BQrLOBbwi84Ev22W2rwdCGhNFP2orXBnrVauEHD9ZRDzbIkhXNCw==}
     hasBin: true
 
   minimatch@10.2.6:
@@ -301,33 +307,33 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.3
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@latex-kit/components@0.3.1':
+  '@latex-kit/components@0.3.3':
     dependencies:
-      '@latex-kit/escape': 0.3.2
-      '@latex-kit/template': 0.5.1
+      '@latex-kit/escape': 0.3.3
+      '@latex-kit/template': 0.6.0
 
-  '@latex-kit/escape@0.3.2': {}
+  '@latex-kit/escape@0.3.3': {}
 
-  '@latex-kit/render@0.5.2': {}
+  '@latex-kit/render@0.5.3': {}
 
-  '@latex-kit/schema@0.4.2':
+  '@latex-kit/schema@0.4.3':
     dependencies:
       jiti: 2.7.0
       schema-typescript: 0.14.6
       yaml: 2.9.1
       zod: 4.6.7
 
-  '@latex-kit/sign-web@0.6.1': {}
+  '@latex-kit/sign-web@0.6.3': {}
 
-  '@latex-kit/sign@0.6.1':
+  '@latex-kit/sign@0.6.3':
     dependencies:
-      '@latex-kit/sign-web': 0.6.1
+      '@latex-kit/sign-web': 0.6.3
       minimist: 1.2.8
       pdf-lib: 1.17.1
 
-  '@latex-kit/template@0.5.1':
+  '@latex-kit/template@0.6.0':
     dependencies:
-      '@latex-kit/escape': 0.3.2
+      '@latex-kit/escape': 0.3.3
       '@unified-latex/unified-latex-util-parse': 1.8.4
 
   '@pdf-lib/standard-fonts@1.0.0':
@@ -467,6 +473,8 @@ snapshots:
       '@unified-latex/unified-latex-types': 1.8.4
       '@unified-latex/unified-latex-util-match': 1.8.4
 
+  appstash@0.8.2: {}
+
   bail@2.0.2: {}
 
   balanced-match@4.0.4: {}
@@ -497,6 +505,11 @@ snapshots:
 
   find-and-require-package-json@0.9.3: {}
 
+  genomic@5.6.10:
+    dependencies:
+      appstash: 0.8.2
+      inquirerer: 4.9.8
+
   inquirerer@4.9.8:
     dependencies:
       deepmerge: 4.3.1
@@ -516,12 +529,13 @@ snapshots:
 
   komoji@0.9.3: {}
 
-  latex-kit@0.6.1:
+  latex-kit@0.7.0:
     dependencies:
-      '@latex-kit/components': 0.3.1
-      '@latex-kit/render': 0.5.2
-      '@latex-kit/schema': 0.4.2
-      '@latex-kit/template': 0.5.1
+      '@latex-kit/components': 0.3.3
+      '@latex-kit/render': 0.5.3
+      '@latex-kit/schema': 0.4.3
+      '@latex-kit/template': 0.6.0
+      genomic: 5.6.10
       inquirerer: 4.9.8
       minimist: 1.2.8
       yanse: 0.2.4

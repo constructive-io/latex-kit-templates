@@ -13,7 +13,7 @@
     "DISCLAIMER.md"
   ],
   "peerDependencies": {
-    "latex-kit": ">=0.6.0"
+    "latex-kit": ">=0.7.0"
   },
   "repository": {
     "type": "git",
