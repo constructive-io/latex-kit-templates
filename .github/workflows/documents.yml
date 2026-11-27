@@ -1,0 +1,75 @@
+name: Documents
+
+# Every push: check the templates and records, build every PDF, and keep them
+# as a download on the run. Every tag like v1.0.0: attach the PDFs to a
+# GitHub release.
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # commit dates set each PDF's build date
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pnpm install
+      - name: The package ships the same disclaimer as the repository
+        run: sed 's#\[LICENSE\](LICENSE)#MIT license#' DISCLAIMER.md | diff - packages/templates/DISCLAIMER.md
+      - name: Templates, schemas and records agree
+        run: pnpm check
+      - name: Generated schemas are up to date
+        run: pnpm typegen && git diff --exit-code -- packages
+      - name: Every template as an empty form
+        run: pnpm blank
+      - name: Every document as a draft
+        run: pnpm draft
+      - name: Finished copies of the documents that have an ID
+        run: |
+          mkdir -p release
+          pnpm exec latex-kit build --final --root project --json > built.json
+          node -e '
+            const fs = require("fs"), path = require("path");
+            for (const d of JSON.parse(fs.readFileSync("built.json", "utf8"))) {
+              // a record with no docId has never been finalized by a person:
+              // run `pnpm final` and commit the record to put it in a release
+              if (d.minted) { console.log(`::notice::${d.name} has no docId yet, so it is not in the release. Run pnpm final and commit.`); continue; }
+              fs.copyFileSync(d.pdf, path.join("release", path.basename(d.pdf)));
+            }
+          '
+          cp project/out/*/*-blank.pdf release/
+          ls -l release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: documents
+          path: |
+            release/*.pdf
+            project/out/*/*-draft.pdf
+          if-no-files-found: error
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: documents
+          path: pdf
+      - name: Attach the PDFs to a release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" pdf/release/*.pdf -R "$GITHUB_REPOSITORY" --title "$GITHUB_REF_NAME" --generate-notes

@@ -5,8 +5,8 @@
 </p>
 
 <p align="center" width="100%">
-  <a href="https://github.com/constructive-io/latex-kit-templates/actions/workflows/ci.yml">
-    <img height="20" src="https://github.com/constructive-io/latex-kit-templates/actions/workflows/ci.yml/badge.svg" />
+  <a href="https://github.com/constructive-io/latex-kit-templates/actions/workflows/documents.yml">
+    <img height="20" src="https://github.com/constructive-io/latex-kit-templates/actions/workflows/documents.yml/badge.svg" />
   </a>
   <a href="https://github.com/constructive-io/latex-kit-templates/blob/main/LICENSE">
     <img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/>
@@ -111,6 +111,19 @@ A bundle is a set of templates that go out together, filled from one shared reco
 ```sh
 pnpm bundle new welcome acme      # one record in project/data/engagements/, one document per template
 ```
+
+### Builds and releases
+
+`.github/workflows/documents.yml` runs on GitHub with nothing to set up:
+
+- **Every push and pull request:** checks the templates and records, builds every template as an empty form and every document as a draft, and keeps the PDFs as a download on the run (the `documents` artifact).
+- **Every tag like `v1.0.0`:** attaches the PDFs to a GitHub release: each empty form, and the finished copy of every document that has a `docId`.
+
+```sh
+git tag v1.0.0 && git push --tags
+```
+
+A document gets its `docId` the first time you run `pnpm final` yourself; commit the record afterwards. Until then it is left out of releases, because an ID minted on a build machine would be thrown away. Built PDFs are never committed.
 
 ### Get one signed
 
